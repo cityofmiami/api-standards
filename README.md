@@ -5,61 +5,16 @@ Last modified 03.08.20
 
 # Contents
 
-[City of Miami REST API Standards 1](#city-of-miami-rest-api-standards)
-
-[Overview 2](#overview)
-
-[What is a REST API?](#what-is-a-rest-api)
 
 [API Categories](#api-categories)
 
 [API Lifecycle](#api-lifecycle)
 
-[API Design Guidelines](#api-design-guidelines)
-
-[API Requirements](#api-requirements)
-
-[REST API Specification](#rest-api-specification)
-
-[Naming Convention (URL Structure)](#naming-convention-url-structure)
-
-[Versioning](#versioning)
-
-[Support](#support)
-
-[Partial Responses / Record Limits (filtering/pagination/sorting)](#partial-responses-record-limits-filteringpaginationsorting)
-
-[Error Handling](#error-handling)
-
-[Testing and Performance](#testing-and-performance)
-
-[Data Handling Patterns](#data-handling-patterns)
-
-[REST API Caching](#rest-api-caching)
-
-[Supporting multiple data formats](#_Toc66114507)
+[API Design Standards](#api-design-guidelines)
 
 [API Management](#api-management)
 
-[Developer portal](#developer-portal)
-
 [API Security](#api-security)
-
-[HTTPS](#https)
-
-[API Keys](#api-keys)
-
-[Restrict HTTP methods](#restrict-http-methods)
-
-[Input Validation](#input-validation)
-
-[CORS](#cors)
-
-[Sensitive Information in HTTP Requests](#sensitive-information-in-http-requests)
-
-[Traffic management controls](#traffic-management-controls)
-
-[Policy Based Implementation (API Management related)](#policy-based-implementation-api-management-related)
 
 [References](#_Toc66114527)
 
@@ -161,10 +116,6 @@ APIs.
 
     -   /permits
 
-        -   /permits/search (non-CRUD action)
-
-        -   /businesses
-
 -   Use HTTP verbs to do CRUD operations on the collections and elements
 
     -   Non-CRUD actions can be verbs instead of nouns and define that
@@ -189,26 +140,9 @@ APIs.
     -   Accounts have transactions `/accounts/{id}/transactions/{id}`
 
 -   Avoid deep nesting with a maximum of 3 levels
-
-    -   Don’t go deeper than /resource/identifier/resource
-
+    - `/resource/identifier/resource`  
     -   Use subqueries to avoid deep nesting
-
--   Responses that don’t involve resources
-
-    -   Actions like the following are a clue that you may not be
-        dealing with a resource response:
-
-        -   Calculate, translate, convert
-
-    -   In this case use verbs not nouns
-
-   `/convert?from=EUR&to=CNY&amount=100`
-
-    -   Make it clear in your API documentation that these
-        ‘non-resource’ scenarios are different
-
--   Move away from using systeminterfaces as part of the API name
+ -   Move away from using systeminterfaces as part of the API name
 
 ### Versioning 
 
@@ -230,12 +164,9 @@ with API developers. All released APIs must have a version.
 | Adding operational parameters to properties | Non-breaking / minor | Update documentation                                        |
 
 ### Support
+[We need to discuss method (i.e GitHub Issues), and SLA
 
--   GitHub Issues?
-
-    -   Who will monitor?
-
--   <https://github.com/GSA/api-standards#5-provide-a-feedback-mechanism-that-is-clear-and-monitored>
+See: <https://github.com/GSA/api-standards#5-provide-a-feedback-mechanism-that-is-clear-and-monitored>
 
 -   Maintain APIs at least one version back (support multiple versions,
     how far back will we go?)
@@ -252,7 +183,7 @@ with API developers. All released APIs must have a version.
 -   Partial response allows you to give developers just the information
     they need.
 
-    -   /users?fields=id,name,address
+    -   `/users?fields=id,name,address`
 
         -   Better performance, & optimized resource usage and bandwidth
 
@@ -265,10 +196,10 @@ with API developers. All released APIs must have a version.
             -   Use limit and offset
 
                 -   Involves use of query parameters
-                    business?offset=6&limit5 (starting row and number of
+                    `business?offset=6&limit5` (starting row and number of
                     rows to receive)
 
-                -   Default pagination is limit=10 with offset = 0
+                -   Default pagination is `limit=10 with offset = 0`
 
                 -   You should design a web API to limit the amount of data
                     returned by any single request.
@@ -281,11 +212,7 @@ with API developers. All released APIs must have a version.
 
             -  Mobile app return 10 rows vs. browser 50 rows
 
-        -   <https://github.com/GSA/api-standards#pagination>
-
-        -   <https://github.com/GSA/api-standards#enable-cors>
-
-
+        
 ### Error Handling
 
 Error responses should include a common HTTP status code, a message for
@@ -350,32 +277,21 @@ http://drupal.org/node/6000",
 
 -   API Testing
 
-    -   https://github.com/GSA/api-standards\#api-testing
-
 -   Measuring, benchmarks and SLA
+
+See: https://github.com/GSA/api-standards\#api-testing
 
 ### Data Handling Patterns
 
--   Client controls response data
+-   Client controls response data to allow for better performance, lower battery usage on mobile, optimal CPU, etc.
 
     -   Mobile device requests less data than a desktop browser
 
-        -   REST client controls the granularity
+    -   Support partial responses
 
-            -   Better performance, lower battery usage, optimal CPU /
-                memory usage
+       -   Single query parameter holds expression that identifies the fields (projections) (linkedin)  
 
-        -   Support partial responses
-
-            -   Single query parameter holds expression that identifies
-                the fields (projections) (linkedin)  
-                  
-                /people/me?fields=firstname,lastname
-
-            -   Multiple query parameter provides ways to filter the
-                fields in response aka filters (meetup)  
-                  
-                use of omit and only
+                `/people/me?fields=firstname,lastname`
 
 ### REST API Caching 
 
@@ -408,38 +324,38 @@ server or database.
 
             -   set max-age based on the refresh speed of your data.
 
-        -   Security
+       -   Security
 
             -   Sensitive data
 
                 -   Should not be stored anywhere
 
-                    -   Cache-Control:”no-store,max-age=60”
+                   -   Cache-Control:”no-store,max-age=60”
 
-                    -   Consider no-store and private for sensitive data
+                   -   Consider no-store and private for sensitive data
 
             -   Private data is meant for a single user
 
                 -   Cache-Control: “private, max-age=60”
 
-                    -   Default is public, so it needs to be specified
+                   -   Default is public, so it needs to be specified
 
             -   Manage by HTTP cache control directives
 
             -   Can have multiple directives
 
-            -   
+          
 
 <span id="_Toc66114507" class="anchor"></span>Supporting multiple data
 formats
 
 \[Do we just support JSON, best practice is to support multiple?\]
 
--   JSON, JSONP, XML, CSV
+-   JSON, XML, CSV
 
     -   Support for multiple formats vs. only one format
 
-        -   If only 1 future proof for accepting other formats in the
+        -   If only one format is supported, make sure that you future proof for accepting other formats in the
             future
 
     -   Client decides the format if multiple formats are available
@@ -449,10 +365,6 @@ formats
         -   /news?output=json
 
         -   /news?output=csv
-
-    -   Use dot notation
-
-       -   /dogs/1234.json
 
     -   Ensure that you provide documentation of data formats provided
 
@@ -505,13 +417,13 @@ documentation among other things.
 
     -   Response time consistency
 
-        -   Make sure that response times are reasonable
+       -   Make sure that response times are reasonable
 
-        -   API uptime
+       -   API uptime
 
-        -   Response time
+       -   Response time
 
-        -   Server performance (CPU/ Memory)
+       -   Server performance (CPU/ Memory)
 
 -   Service Level Agreement (SLA)
 
@@ -638,23 +550,19 @@ API Key is into the URL.
 
     -   Tokens based
 
-        -   Authorization Token – proof of authorization
+       -   Authorization Token – proof of authorization
 
-        -   Access token – credentials for accessing the protected
+       -   Access token – credentials for accessing the protected
             resource
 
-        -   Refresh token – used for extending access token validity
+       -   Refresh token – used for extending access token validity
 
-        -   Scopes
+       -   Scopes
 
-            -   See spotify developer site for how they manage scopes
+          -   See spotify developer site for how they manage scopes
 
     -   End user is in full control of their data
 
-    -   Application / client needs an API key and secret
-
-    -   Authorization Scope Grant / social login scheme (the most
-        popular)
 
 ### Policy Based Implementation (API Management related)
 
