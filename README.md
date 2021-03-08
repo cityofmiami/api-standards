@@ -660,25 +660,24 @@ API Key is into the URL.
 
 \[needs content\]
 
+
 > It is recommended that you review the OWASP REST Security Cheat Sheet
 > for more information
 > <https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html>
 
-Vasudevan, Keshav. *What is API Lifecycle Management*. 29 March 2017.
-&lt;https://swagger.io/blog/api-strategy/what-is-api-lifecycle-management/&gt;.
+## Reference
 
 What is API Lifecycle Management:
 <https://swagger.io/blog/api-strategy/what-is-api-lifecycle-management/>
 
+https://github.com/18F/api-standards
+
+<https://github.com/WhiteHouse/api-standards>
+<https://github.com/GSA/api-standards>
+
 Open API Standard
 [https://www.openapis.org/](https://www.openapis.org/faq)
 
-Microservices <https://microservices.io/index.html>
-
-<https://github.com/WhiteHouse/api-standards>
-
 <https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html>
-
-<https://github.com/GSA/api-standards>
 
 <https://github.com/wet-boew/wet-boew-api-standards>
