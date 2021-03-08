@@ -1,4 +1,4 @@
-# City of Miami REST API Standards 
+# City of Miami REST API Standards [DRAFT]
 
 Ver 0.8.0  
 Last modified 03.08.20
@@ -9,82 +9,59 @@ Last modified 03.08.20
 
 [Overview 2](#overview)
 
-[What is a REST API? 2](#what-is-a-rest-api)
+[What is a REST API?](#what-is-a-rest-api)
 
-[API Categories 2](#api-categories)
+[API Categories](#api-categories)
 
-[API Lifecycle 3](#api-lifecycle)
+[API Lifecycle](#api-lifecycle)
 
-[API Design Guidelines 4](#api-design-guidelines)
+[API Design Guidelines](#api-design-guidelines)
 
-[API Requirements 4](#api-requirements)
+[API Requirements](#api-requirements)
 
-[REST API Specification 4](#rest-api-specification)
+[REST API Specification](#rest-api-specification)
 
-[Naming Convention (URL Structure) 4](#naming-convention-url-structure)
+[Naming Convention (URL Structure)](#naming-convention-url-structure)
 
-[Versioning 5](#versioning)
+[Versioning](#versioning)
 
-[Support 5](#support)
+[Support](#support)
 
-[Partial Responses / Record Limits (filtering/pagination/sorting)
-5](#partial-responses-record-limits-filteringpaginationsorting)
+[Partial Responses / Record Limits (filtering/pagination/sorting)](#partial-responses-record-limits-filteringpaginationsorting)
 
-[Error Handling 6](#error-handling)
+[Error Handling](#error-handling)
 
-[Testing and Performance 7](#testing-and-performance)
+[Testing and Performance](#testing-and-performance)
 
-[Data Handling Patterns 7](#data-handling-patterns)
+[Data Handling Patterns](#data-handling-patterns)
 
-[REST API Caching 8](#rest-api-caching)
+[REST API Caching](#rest-api-caching)
 
-[Supporting multiple data formats 9](#_Toc66114507)
+[Supporting multiple data formats](#_Toc66114507)
 
-[API Management 9](#api-management)
+[API Management](#api-management)
 
-[Developer portal 9](#developer-portal)
+[Developer portal](#developer-portal)
 
-[API Security 10](#api-security)
+[API Security](#api-security)
 
-[HTTPS 10](#https)
+[HTTPS](#https)
 
-[API Keys 10](#api-keys)
+[API Keys](#api-keys)
 
-[Restrict HTTP methods 10](#restrict-http-methods)
+[Restrict HTTP methods](#restrict-http-methods)
 
-[Input Validation 10](#input-validation)
+[Input Validation](#input-validation)
 
-[CORS 11](#cors)
+[CORS](#cors)
 
-[Sensitive Information in HTTP Requests
-11](#sensitive-information-in-http-requests)
+[Sensitive Information in HTTP Requests](#sensitive-information-in-http-requests)
 
-[Traffic management controls 11](#traffic-management-controls)
+[Traffic management controls](#traffic-management-controls)
 
-[Policy Based Implementation (API Management related)
-12](#policy-based-implementation-api-management-related)
+[Policy Based Implementation (API Management related)](#policy-based-implementation-api-management-related)
 
-[Vision 12](#_Toc66114519)
-
-[MuleSoft and .NET 14](#_Toc66114520)
-
-[API Taxonomy 14](#_Toc66114521)
-
-[Digital Services Core 14](#_Toc66114522)
-
-[API Inventory Review / API Taxonomy 14](#_Toc66114523)
-
-[API Maturity 15](#_Toc66114524)
-
-[Definitions 15](#_Toc66114525)
-
-[Roadmap 16](#_Toc66114526)
-
-[References 16](#_Toc66114527)
-
-[Research 16](#_Toc66114528)
-
-[Domain Driven API Design 19](#_Toc66114529)
+[References](#_Toc66114527)
 
 ## Overview
 
@@ -93,12 +70,8 @@ the City of Miami. It aims to encourage consistency, reusability,
 maintainability, and best practices across applications. *The goal is to
 balance a truly RESTFUL API with a positive developer experience (DX)*
 
-These standards are influence by the White House
-(<https://github.com/WhiteHouse/api-standards>) and 18F API standards
-(<https://github.com/18F/api-standards>) as well as best practices from
-the private sector.
-
-<https://github.com/wet-boew/wet-boew-api-standards>
+These standards are influence by the [White House](https://github.com/WhiteHouse/api-standards)
+and THE [18F API standards](https://github.com/18F/api-standards) as well as general API best practices from the private sector.
 
 ### What is a REST API?
 
@@ -725,3 +698,5 @@ Microservices <https://microservices.io/index.html>
 <https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html>
 
 <https://github.com/GSA/api-standards>
+
+<https://github.com/wet-boew/wet-boew-api-standards>
