@@ -75,7 +75,6 @@ and THE [18F API standards](https://github.com/18F/api-standards) as well as gen
 
 ### What is a REST API?
 
-###  
 
 A REST API is modeled as collections of individually addressable
 resources (the nouns of the API). Resources are referenced with their
@@ -101,8 +100,6 @@ a subscription for API consumption by external users.
 **Partner API** – used to facilitate communication and integration of
 applications between companies and its business partners. iBuild,
 Laserfiche, DocuSign and ProjectDox would be an example.
-
-## 
 
 ## API Lifecycle 
 
@@ -138,21 +135,13 @@ lifecycle? Are we building specifications first?\]:
     lifecycle. It is the phase where support for an API’s version, or in
     many cases, an entire API itself, is discontinued.
 
-(Vasudevan)
-
 A roadmap of your API development should be published in advance and
 should announce new versions, deprecations, and retirement of existing
 APIs.
 
-*Another idea:  
-<https://github.com/18F/API-All-the-X/blob/master/pages/how_to_get_started_with_apis.md>*
-
-## 
-
 ## API Design Guidelines
 
-*API-first api development approach  
-*
+*API-first api development approach*
 
 ### API Requirements
 
@@ -160,7 +149,7 @@ APIs.
 
 ### REST API Specification
 
--   \[moved this section, just add what we are going to use\]
+[Add content on Swagger and RAML]
 
 ### Naming Convention (URL Structure)
 
@@ -193,11 +182,11 @@ APIs.
 
 -   Resource relationships
 
-    -   E.g orders have items /orders/{id}
+    -   E.g orders have items `/orders/{id}`
 
-    -   People have followers /people/{id}/followers/{id}
+    -   People have followers `/people/{id}/followers/{id}`
 
-    -   Accounts have transactions /accounts/{id}/transactions/{id}
+    -   Accounts have transactions `/accounts/{id}/transactions/{id}`
 
 -   Avoid deep nesting with a maximum of 3 levels
 
@@ -214,7 +203,7 @@ APIs.
 
     -   In this case use verbs not nouns
 
-        -   /convert?from=EUR&to=CNY&amount=100
+   `/convert?from=EUR&to=CNY&amount=100`
 
     -   Make it clear in your API documentation that these
         ‘non-resource’ scenarios are different
@@ -281,24 +270,21 @@ with API developers. All released APIs must have a version.
 
                 -   Default pagination is limit=10 with offset = 0
 
-        -   You should design a web API to limit the amount of data
-            returned by any single request.
+                -   You should design a web API to limit the amount of data
+                    returned by any single request.
 
             -   Consider supporting query strings that specify the
                 maximum number of items to retrieve and a starting
                 offset into the collection.  
                   
-                /orders?limit=25&offset=50
+                `orders?limit=25&offset=50`
 
-        -   Mobile app return 10 rows vs. browser 50 rows
+            -  Mobile app return 10 rows vs. browser 50 rows
 
         -   <https://github.com/GSA/api-standards#pagination>
 
         -   <https://github.com/GSA/api-standards#enable-cors>
 
-### 
-
-### 
 
 ### Error Handling
 
@@ -307,7 +293,7 @@ the developer, a message for the end user (when appropriate), an
 internal error code (corresponding to some specific internally
 determined ID), and links where developers can find more info.
 
-{
+```json {
 
 "status" : 400,
 
@@ -325,7 +311,8 @@ end-users, if needed.",
 
 http://drupal.org/node/6000",
 
-}
+} 
+```
 
 ####  Supported HTTP Status Codes
 
@@ -350,7 +337,6 @@ http://drupal.org/node/6000",
 | 7XXX          | Validation errors | i.e. 7002 Missing required field description |
 |               |                   |                                              |
 
-<img src="media/image1.png" style="width:4.32446in;height:0.89532in" />
 
 -   Asynchronicity (handling long operations)
 
@@ -438,9 +424,7 @@ server or database.
 
                     -   Default is public, so it needs to be specified
 
-        <!-- -->
-
-        -   Manage by HTTP cache control directives
+            -   Manage by HTTP cache control directives
 
             -   Can have multiple directives
 
@@ -468,7 +452,7 @@ formats
 
     -   Use dot notation
 
-        -   /dogs/1234.json
+       -   /dogs/1234.json
 
     -   Ensure that you provide documentation of data formats provided
 
@@ -496,7 +480,7 @@ documentation among other things.
 
     -   Setup API access policies for your API
 
-        -   Who can access it, private vs. partner vs. public
+            -   Who can access it, private vs. partner vs. public
 
     -   Do not publish internal APIs on the portal (where to publish
         internal APIs?)
@@ -637,8 +621,6 @@ API Key is into the URL.
     -   5 / second, 5000 per day?
 
 -   Spike arrests policy
-
-<!-- -->
 
 -   Token based authentication – JWT \[Do we use this?\]
 
