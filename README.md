@@ -346,8 +346,8 @@ server or database.
 
           
 
-<span id="_Toc66114507" class="anchor"></span>Supporting multiple data
-formats
+<span id="_Toc66114507" class="anchor">Supporting multiple data
+formats</span>
 
 \[Do we just support JSON, best practice is to support multiple?\]
 
@@ -521,8 +521,8 @@ https://twitter.com/vanderaj/lists
 
 **NOT OK:**
 
-https://example.com/controller/123/action?apiKey=a53f435643de32 because
-API Key is into the URL.
+https://example.com/controller/123/action?apiKey=a53f435643de32 
+API Key is inserted into the URL.
 
 ### Traffic management controls
 
@@ -534,7 +534,7 @@ API Key is into the URL.
 
 -   Spike arrests policy
 
--   Token based authentication – JWT \[Do we use this?\]
+-   Token based authentication – JWT \[How are we using?\]
 
     -   JSON Web Tokens (JWT)
 
@@ -558,8 +558,6 @@ API Key is into the URL.
        -   Refresh token – used for extending access token validity
 
        -   Scopes
-
-          -   See spotify developer site for how they manage scopes
 
     -   End user is in full control of their data
 
