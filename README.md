@@ -1,7 +1,7 @@
 # City of Miami REST API Standards [DRAFT]
 
-Ver 0.8.0  
-Last modified 03.08.20
+Ver 0.9.0  
+Last modified 03.09.20
 
 # Contents
 
@@ -346,10 +346,9 @@ server or database.
 
           
 
-<span id="_Toc66114507" class="anchor">Supporting multiple data
-formats</span>
+## Supported data formats
 
-\[Do we just support JSON, best practice is to support multiple?\]
+[Do we just support JSON, best practice is to support multiple?]
 
 -   JSON, XML, CSV
 
@@ -397,7 +396,7 @@ documentation among other things.
     -   Do not publish internal APIs on the portal (where to publish
         internal APIs?)
 
--   Support
+-   Support [how will we handle support?]
 
     -   FAQ to provide guidance to solve common problems.
 
@@ -425,13 +424,6 @@ documentation among other things.
 
        -   Server performance (CPU/ Memory)
 
--   Service Level Agreement (SLA)
-
-    -   Number of calls: 10,000 calls per day
-
-    -   Concurrency 5 calls / second
-
-    -   Average response time &lt; 1 second
 
 ## API Security
 
@@ -562,11 +554,6 @@ API Key is inserted into the URL.
     -   End user is in full control of their data
 
 
-### Policy Based Implementation (API Management related)
-
-\[needs content\]
-
-
 > It is recommended that you review the OWASP REST Security Cheat Sheet
 > for more information
 > <https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html>
@@ -587,3 +574,9 @@ Open API Standard
 <https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html>
 
 <https://github.com/wet-boew/wet-boew-api-standards>
+
+## Next steps
+
+-  Review standards with developers
+-  Incorporate MuleSoft related standards / best practices
+-  Make standards live
