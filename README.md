@@ -58,14 +58,13 @@ Laserfiche, DocuSign and ProjectDox would be an example.
 
 ## API Lifecycle 
 
-The five stages of the API lifecycle are \[are we ok with this
-lifecycle? Are we building specifications first?\]:
+The five stages of the API lifecycle are: 
 
 1.  **Planning and designing & mocking the API**: API planning and
     design involves mapping out the various, resources and operations,
     along with the business case scenarios before the API is fully
-    implemented. Identify who the consumer of the API will be. Create
-    the specification, mock and validation created from specification,
+    implemented. Identify who the consumer of the API will be. **Create
+    the specification**, mock and validation created from specification,
     validate requirements, if requirements are not validated return to
     analysis and requirements gathering. If requirements are validated
     proceed to step 2.
@@ -94,17 +93,11 @@ A roadmap of your API development should be published in advance and
 should announce new versions, deprecations, and retirement of existing
 APIs.
 
-## API Design Guidelines
-
-*API-first api development approach*
-
-### API Requirements
-
-[*https://github.com/18F/API-All-the-X/blob/master/pages/sample\_api\_requirements.md*](https://github.com/18F/API-All-the-X/blob/master/pages/sample_api_requirements.md)
 
 ### REST API Specification
 
-[Add content on Swagger and RAML]
+- [Open API Specification (Swagger)](https://swagger.io/specification/)
+- [RAML Specification for MuleSoft APIs](https://www.mulesoft.com/resources/api/design-apis-easily-with-RAML)
 
 ### Naming Convention (URL Structure)
 
@@ -163,11 +156,6 @@ with API developers. All released APIs must have a version.
 | Remove an operation                         | Breaking/Major       | Create new version, update documentation, notify developers |
 | Adding operational parameters to properties | Non-breaking / minor | Update documentation                                        |
 
-### Support
-[We need to discuss method (i.e GitHub Issues), and SLA
-
-See: <https://github.com/GSA/api-standards#5-provide-a-feedback-mechanism-that-is-clear-and-monitored>
-
 -   Maintain APIs at least one version back (support multiple versions,
     how far back will we go?)
 
@@ -177,6 +165,18 @@ See: <https://github.com/GSA/api-standards#5-provide-a-feedback-mechanism-that-i
         as deprecated and it is not available for subscription by new
         users. Support is maintained for existing users for \[a period
         of time\].
+        
+### Support 
+
+- FAQ to provide guidance to solve common problems
+- GitHub Issue tracking
+- Developer newsletter
+- Social media
+- SLAs
+    - Support previous versions for 1 year after release of new API version
+    - Issue track response time 3-4 business days 
+
+See: <https://github.com/GSA/api-standards#5-provide-a-feedback-mechanism-that-is-clear-and-monitored>
 
 ### Partial Responses / Record Limits (filtering/pagination/sorting)
 
@@ -383,15 +383,6 @@ documentation among other things.
 
        -   Server performance (CPU/ Memory)
 
-### Support 
-
-- FAQ to provide guidance to solve common problems
-- GitHub Issue tracking
-- Developer newsletter
-- Social media
-- SLAs
-    - Support previous versions for 1 year after release of new API version
-    - Issue track response time 3-4 business days 
    
 ## API Security
 
