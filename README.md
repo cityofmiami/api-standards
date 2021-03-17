@@ -1,7 +1,7 @@
 # City of Miami REST API Standards [DRAFT]
 
-Ver 0.9.0  
-Last modified 03.09.20
+Ver 0.10.0  
+Last modified 03.17.20
 
 # Contents
 
@@ -362,7 +362,7 @@ documentation among other things.
 
     -   Setup API access policies for your API
 
-            -   Who can access it, private vs. partner vs. public
+       -   Who can access it, private vs. partner vs. public
 
     -   Do not publish internal APIs on the portal 
        - Publish internal / private APIs in internal exchange   
@@ -490,36 +490,15 @@ API Key is inserted into the URL.
 
 -   Rate limiting policy
 
-    -   5 / second, 5000 per day?
+    -   5 / second, 2,500 per day
 
--   Spike arrests policy
 
--   Token based authentication – JWT \[How are we using?\]
+-   OAuth 2.0 authorization framework 
 
-    -   JSON Web Tokens (JWT)
-
-        -   Uses secrets
-
-    -   Encoded string (hasing or private key for encryption)
-
-    -   Issue can handle validity (expiry, revocation, etc.)
-
--   OAuth 2.0 authorization framework \[When are we using OAuth today?\]
-
-    -   Industry standard for authorization
-
-    -   Tokens based
-
-       -   Authorization Token – proof of authorization
-
-       -   Access token – credentials for accessing the protected
-            resource
-
-       -   Refresh token – used for extending access token validity
-
-       -   Scopes
-
+    -   Best practice for authentication
+    -   Tokens based (JWT)
     -   End user is in full control of their data
+    -   
 
 
 > It is recommended that you review the OWASP REST Security Cheat Sheet
