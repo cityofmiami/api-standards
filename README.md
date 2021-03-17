@@ -251,7 +251,6 @@ http://drupal.org/node/6000",
 | 400              | Bad Request           |             |
 | 404              | Not found             |             |
 | 401              | Unauthorized          |             |
-| 405              | Method not allowed    | Necessary?  |
 | 429              | Too many requests     |             |
 | 500              | Internal Server Error |             |
 
@@ -299,73 +298,45 @@ Caching improves performance and improves scalability and the throughput
 of the API. Caching can take place at the client browser, proxy, app
 server or database.
 
--   What to cache and How long to cache?
+When architecting a new API ask yourself the following questions:
 
--   Are we currently caching?
+- Type of data your API is returning 
+- Speed of change (answers how long to cache)
+- Sensitivity of the data 
+   - sensitive data should never be cached
+   - Consider no-store and private for sensitive data
+   - Cache-Control:”no-store,max-age=60”
+   - Private data is meant for a single user
+         - Cache-Control:”no-store,max-age=60”
+         - Default is public, so it needs to be specified     
+- For large payloads consider using ETag header to check if data has changed
 
-    -   Depends on nature of data see below
+    -   Check if ETag hash has changed ,if it hasn’t changed
+        (304: Not Modified) don’t request data, if ETag has
+        has changed (200, OK), then request new information.
 
-        -   Speed of change
+    -   Use ETag response especially for large reponses
 
-            -   Set cache to no-cache
-
-            -   Use ETag header to check if data has changed
-
-                -   Check if ETag hash has changed ,if it hasn’t changed
-                    (304: Not Modified) don’t request data, if ETag has
-                    has changed (200, OK), then request new information.
-
-                -   Use ETag response especially for large reponses
-
-        -   Time sensitivity
-
-            -   max-age=60 means that cached data is valid for 60
+-   Time sensitivity
+    -   max-age=60 means that cached data is valid for 60
                 seconds
 
-            -   set max-age based on the refresh speed of your data.
-
-       -   Security
-
-            -   Sensitive data
-
-                -   Should not be stored anywhere
-
-                   -   Cache-Control:”no-store,max-age=60”
-
-                   -   Consider no-store and private for sensitive data
-
-            -   Private data is meant for a single user
-
-                -   Cache-Control: “private, max-age=60”
-
-                   -   Default is public, so it needs to be specified
-
-            -   Manage by HTTP cache control directives
-
-            -   Can have multiple directives
-
+    -   set max-age based on the refresh speed of your data.
           
 
 ## Supported data formats
 
-[Do we just support JSON, best practice is to support multiple?]
-
--   JSON, XML, CSV
-
-    -   Support for multiple formats vs. only one format
-
-        -   If only one format is supported, make sure that you future proof for accepting other formats in the
-            future
-
-    -   Client decides the format if multiple formats are available
+-   We currently support JSON & XML data formats
+-   List data formats provided in documentation
+-   Best practice is to make sure that you future proof for accepting other formats in the future
+-   Client decides the format if multiple formats are available
 
     -   Specified in query parameter
 
-        -   /news?output=json
+       -   /news?output=json
 
-        -   /news?output=csv
-
-    -   Ensure that you provide documentation of data formats provided
+       -   /news?output=csv
+    
 
 ## API Management
 
@@ -393,20 +364,8 @@ documentation among other things.
 
             -   Who can access it, private vs. partner vs. public
 
-    -   Do not publish internal APIs on the portal (where to publish
-        internal APIs?)
-
--   Support [how will we handle support?]
-
-    -   FAQ to provide guidance to solve common problems.
-
-    -   Provide best practices
-
-    -   Contact forms
-
-    -   Bug reporting
-
-    -   Forums / social media collaboration
+    -   Do not publish internal APIs on the portal 
+       - Publish internal / private APIs in internal exchange   
 
 -   Provide specifications-based tooling
 
@@ -424,7 +383,16 @@ documentation among other things.
 
        -   Server performance (CPU/ Memory)
 
+### Support 
 
+- FAQ to provide guidance to solve common problems
+- GitHub Issue tracking
+- Developer newsletter
+- Social media
+- SLAs
+    - Support previous versions for 1 year after release of new API version
+    - Issue track response time 3-4 business days 
+   
 ## API Security
 
 ### HTTPS
@@ -575,8 +543,3 @@ Open API Standard
 
 <https://github.com/wet-boew/wet-boew-api-standards>
 
-## Next steps
-
--  Review standards with developers
--  Incorporate MuleSoft related standards / best practices
--  Make standards live
