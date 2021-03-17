@@ -409,6 +409,13 @@ compromise.
 
 -   Do not rely exclusively on API keys to protect sensitive, critical
     or high-value resources.
+    
+### OAuth 2.0 authorization framework 
+
+    -   Best practice for authentication
+    -   Tokens based (JWT)
+    -   End user is in full control of their data
+    -   Used for .Net Core APIs
 
 ### Restrict HTTP methods
 
@@ -481,15 +488,7 @@ API Key is inserted into the URL.
 
 -   Rate limiting policy
 
-    -   5 / second, 2,500 per day
-
-
--   OAuth 2.0 authorization framework 
-
-    -   Best practice for authentication
-    -   Tokens based (JWT)
-    -   End user is in full control of their data
-    -   
+    -   5 / second, 2,500 per day 
 
 
 > It is recommended that you review the OWASP REST Security Cheat Sheet
