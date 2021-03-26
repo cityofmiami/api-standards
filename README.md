@@ -1,7 +1,7 @@
 # City of Miami REST API Standards [DRAFT]
 
-Ver 0.10.0  
-Last modified 03.17.20
+Ver 0.11.0  
+Last modified 03.26.20
 
 # Contents
 
@@ -178,7 +178,7 @@ with API developers. All released APIs must have a version.
 
 See: <https://github.com/GSA/api-standards#5-provide-a-feedback-mechanism-that-is-clear-and-monitored>
 
-### Partial Responses / Record Limits (filtering/pagination/sorting)
+### Filtering, Pagination and Sorting
 
 -   Partial response allows you to give developers just the information
     they need.
