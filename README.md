@@ -25,7 +25,7 @@ the City of Miami. It aims to encourage consistency, reusability,
 maintainability, and best practices across applications. *The goal is to
 balance a truly RESTFUL API with a positive developer experience (DX)*
 
-These standards are influence by the [White House](https://github.com/WhiteHouse/api-standards)
+These standards are influenced by the [White House](https://github.com/WhiteHouse/api-standards)
 and THE [18F API standards](https://github.com/18F/api-standards) as well as general API best practices from the private sector.
 
 ### What is a REST API?
@@ -412,10 +412,10 @@ compromise.
     
 ### OAuth 2.0 authorization framework 
 
-    -   Best practice for authentication
-    -   Tokens based (JWT)
-    -   End user is in full control of their data
-    -   Used for .Net Core APIs
+  -   Best practice for authentication
+  -   Tokens based (JWT)
+  -   End user is in full control of their data
+  -   Used for .Net Core APIs
 
 ### Restrict HTTP methods
 
