@@ -249,8 +249,10 @@ http://drupal.org/node/6000",
 | 201              | Created               |             |
 | 304              | Not modified          |             |
 | 400              | Bad Request           |             |
-| 404              | Not found             |             |
 | 401              | Unauthorized          |             |
+| 404              | Not found             |             |
+| 405              | Method not allowed    |             |
+| 413              | Payload too large     |             |
 | 429              | Too many requests     |             |
 | 500              | Internal Server Error |             |
 
